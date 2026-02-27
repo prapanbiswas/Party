@@ -1,119 +1,700 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#050508">
-    <title>LuminaParty - Pro Desk</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+  <!-- ═══════════════════════════════════════════════════════
+       LUMINA PARTY — SEO-OPTIMIZED HEAD
+       Target keywords: party light online, online party lights,
+       music reactive lights, sync lights browser, party light controller
+  ════════════════════════════════════════════════════════ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- PRIMARY SEO -->
+  <title>Party Light Online — Free Music-Reactive Light Controller | LuminaParty</title>
+  <meta name="description" content="LuminaParty is a free online party light controller. Sync your lights to music in real time using your browser. No app needed — host a party light show, control RGB lights online, and share with friends via a room code.">
+  <meta name="keywords" content="party light online, online party lights, party light controller, music reactive lights, sync lights to music, free party lights, browser light controller, rgb light party, led party light online, beat sync lights">
+  <meta name="author" content="Prapan Biswas">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://prapanbiswas.github.io/Party/">
+
+  <!-- OPEN GRAPH (Facebook / LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://prapanbiswas.github.io/Party/">
+  <meta property="og:title" content="Party Light Online — Free Music-Reactive Light Controller">
+  <meta property="og:description" content="Control your party lights online. Beat-sync LEDs to music, share a room code, run 14+ light effects — all free in your browser. No app, no install.">
+  <meta property="og:image" content="https://prapanbiswas.github.io/Party/og-image.png">
+  <meta property="og:site_name" content="LuminaParty">
+  <meta property="og:locale" content="en_US">
+
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://prapanbiswas.github.io/Party/">
+  <meta name="twitter:title" content="Party Light Online — LuminaParty">
+  <meta name="twitter:description" content="Free browser-based party light controller. Sync LEDs to music, 14 effects, real-time beat detection. No app needed.">
+  <meta name="twitter:image" content="https://prapanbiswas.github.io/Party/og-image.png">
+
+  <!-- STRUCTURED DATA — SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "LuminaParty — Party Light Online Controller",
+    "url": "https://prapanbiswas.github.io/Party/",
+    "description": "Free online party light controller. Sync RGB lights to music using your browser microphone. Features 14 light effects, real-time beat detection, BPM tracking, and multi-device room sharing via a 4-digit room code.",
+    "applicationCategory": "EntertainmentApplication",
+    "operatingSystem": "Web Browser (Chrome, Firefox, Safari, Edge)",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "creator": {
+      "@type": "Person",
+      "name": "Prapan Biswas",
+      "url": "https://prapanbiswas.github.io/"
+    },
+    "featureList": [
+      "Music-reactive party lights online",
+      "Beat detection and BPM tracking",
+      "14 lighting effects (Rainbow, Fire, Ocean, Rave, Police and more)",
+      "Multi-device sync via room code",
+      "Real-time RGB color control",
+      "No app or install required"
+    ],
+    "keywords": "party light online, online party lights, music reactive lights, party light controller, sync lights to music"
+  }
+  </script>
+
+  <!-- STRUCTURED DATA — FAQPage for SEO snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I use party light online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open LuminaParty in your browser, tap Host Party, then share the 4-digit room code with friends. Each friend opens the page, enters the code, and their screen becomes a synchronized light node that responds to your music in real time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does LuminaParty work without downloading an app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. LuminaParty runs entirely in your browser — Chrome, Firefox, Safari, or Edge. No download, no install, no account required. It is completely free."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I sync party lights to music online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. LuminaParty uses your device microphone and a professional 19-module DSP audio engine to detect bass, beats, and BPM in real time, then drives connected light nodes in sync with the music."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- THEME & ICONS -->
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><circle cx='16' cy='16' r='8' fill='none' stroke='%2300f0a0' stroke-width='2'/><circle cx='16' cy='16' r='3' fill='%2300f0a0'/></svg>">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@300;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- DEPENDENCIES -->
+  <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js" defer></script>
+  <script src="ordo-audio.js" defer></script>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="view-landing" class="view active">
-        <h1 class="glow-text">LUMINAPARTY</h1>
-        <p class="subtitle">Pro Controller Desk</p>
-        <button class="btn btn-primary" onclick="initHost()">Host Party</button>
-        <div class="divider">OR</div>
-        <input type="text" id="join-id" class="input-code" placeholder="ROOM CODE" maxlength="4">
-        <button class="btn btn-secondary" onclick="initClient()">Join Lights</button>
+<!-- ══════════════════════════════════════════════════════════
+     LANDING VIEW
+══════════════════════════════════════════════════════════ -->
+<div id="view-landing" class="view active" role="main">
+  <canvas id="landing-canvas" aria-hidden="true"></canvas>
+
+  <div class="landing-content">
+
+    <!-- Brand -->
+    <header class="brand-block">
+      <div class="brand-icon-ring" aria-hidden="true">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="20" stroke="#00f0a0" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <circle cx="24" cy="24" r="10" fill="none" stroke="#00f0a0" stroke-width="1.5"/>
+          <circle cx="24" cy="24" r="4" fill="#00f0a0"/>
+          <line x1="24" y1="4" x2="24" y2="10" stroke="#00f0a0" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="24" y1="38" x2="24" y2="44" stroke="#00f0a0" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="4" y1="24" x2="10" y2="24" stroke="#00f0a0" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="38" y1="24" x2="44" y2="24" stroke="#00f0a0" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h1 class="brand-name">LUMINA<span class="brand-accent">PARTY</span></h1>
+      <p class="brand-tagline">Party Light Online — Beat-Sync RGB Controller</p>
+    </header>
+
+    <!-- Feature pills for SEO + UX -->
+    <div class="feature-pills" aria-label="Key features">
+      <span class="pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        Music Reactive
+      </span>
+      <span class="pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        Browser Only
+      </span>
+      <span class="pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+        Multi-Device
+      </span>
+      <span class="pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        14 Effects
+      </span>
+      <span class="pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Free Forever
+      </span>
     </div>
 
-    <div id="view-client" class="view">
-        <div id="client-bg"></div>
-        <div class="client-overlay">
-            <h2 id="client-status">Connecting...</h2>
-            <p id="client-address" class="highlight"></p>
+    <!-- Action Cards -->
+    <div class="action-cards">
+      <button class="action-card primary" onclick="initHost()" aria-label="Host a party light session">
+        <div class="action-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
         </div>
-    </div>
-
-    <div id="view-host" class="view">
-        <div class="desk-container">
-            
-            <div class="desk-header">
-                <div class="nav-tabs">
-                    <button class="tab-btn active" onclick="switchTab('console')">Console</button>
-                    <button class="tab-btn" onclick="switchTab('audio')">Audio Sync</button>
-                </div>
-                <div class="status-panel">
-                    <span>CODE: <span id="room-code" class="highlight">...</span></span>
-                    <span>LIGHTS: <span id="conn-count" class="highlight">0</span></span>
-                </div>
-            </div>
-
-            <div id="tab-console" class="tab-content active">
-                
-                <div class="panel">
-                    <h3>Base Color Faders</h3>
-                    <div class="dmx-faders">
-                        <div class="fader-group">
-                            <input type="range" orient="vertical" id="val-r" min="0" max="255" value="0">
-                            <span class="label-r">R</span>
-                        </div>
-                        <div class="fader-group">
-                            <input type="range" orient="vertical" id="val-g" min="0" max="255" value="255">
-                            <span class="label-g">G</span>
-                        </div>
-                        <div class="fader-group">
-                            <input type="range" orient="vertical" id="val-b" min="0" max="255" value="136">
-                            <span class="label-b">B</span>
-                        </div>
-                        <div class="fader-group">
-                            <input type="range" orient="vertical" id="val-w" min="0" max="255" value="0">
-                            <span class="label-w">W</span>
-                        </div>
-                        <div class="fader-group master">
-                            <input type="range" orient="vertical" id="val-master" min="0" max="1" step="0.01" value="1">
-                            <span class="label-m">MST</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="panel">
-                    <h3>Effect Layer (Uses Base Color)</h3>
-                    <div class="grid-2">
-                        <button class="fx-btn active" onclick="setEffect('none', this)">Solid</button>
-                        <button class="fx-btn" onclick="setEffect('chase', this)">Chase</button>
-                        <button class="fx-btn" onclick="setEffect('split', this)">Split</button>
-                        <button class="fx-btn" onclick="setEffect('rainbow', this)">Rainbow</button>
-                    </div>
-                    <div class="slider-row">
-                        <span>Speed</span>
-                        <input type="range" id="fx-speed" min="1" max="100" value="50">
-                    </div>
-                </div>
-
-                <div class="panel danger-panel">
-                    <h3>Master Flash Override</h3>
-                    <div class="flash-controls">
-                        <button class="btn btn-flash" id="btn-flash-toggle">FLASH OFF</button>
-                        <div class="flash-settings">
-                            <div class="slider-row">
-                                <span>Rate</span>
-                                <input type="range" id="flash-speed" min="1" max="50" value="25">
-                            </div>
-                            <div class="slider-row">
-                                <span>Color</span>
-                                <input type="color" id="flash-color" value="#ffffff">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="tab-audio" class="tab-content">
-                <div class="panel">
-                    <h3>Audio Reactive Mode</h3>
-                    <p class="subtitle">Warning: Overrides manual console while active.</p>
-                    <button class="btn btn-primary" id="btn-mic" style="width:100%; margin: 20px 0;" onclick="toggleAudio()">Enable Microphone Sync</button>
-                    <div id="audio-viz" class="visualizer"></div>
-                </div>
-            </div>
-
+        <div class="action-card-text">
+          <strong>Host Party</strong>
+          <span>Create a room &amp; control all lights</span>
         </div>
+        <svg class="action-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+
+      <button class="action-card secondary" onclick="showJoinPanel()" aria-label="Join a party as a light node">
+        <div class="action-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+            <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/>
+          </svg>
+        </div>
+        <div class="action-card-text">
+          <strong>Join Lights</strong>
+          <span>Enter room code to sync</span>
+        </div>
+        <svg class="action-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
     </div>
 
-    <script src="app.js"></script>
+    <!-- Join panel (hidden by default) -->
+    <div class="join-panel" id="join-panel" role="form" aria-label="Join room form">
+      <label for="join-id" class="join-label">ROOM CODE</label>
+      <div class="join-row">
+        <input type="text" id="join-id" class="join-input" placeholder="A B C D" maxlength="4" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="4-digit room code">
+        <button class="join-btn" onclick="initClient()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- SEO-rich description block (visually subtle) -->
+    <p class="seo-blurb">
+      Free online party light controller. Sync RGB lights to music, detect beats in real time, run 14 lighting effects — all inside your browser. No app, no install.
+    </p>
+
+  </div>
+
+  <!-- SEO hidden footer text (visible to crawlers) -->
+  <footer class="landing-footer">
+    <a href="https://prapanbiswas.github.io/" rel="author">By Prapan Biswas</a>
+    <span class="footer-sep" aria-hidden="true">·</span>
+    <span>Free Party Light Online Tool</span>
+    <span class="footer-sep" aria-hidden="true">·</span>
+    <span>No Download Required</span>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     CLIENT VIEW (Light Node)
+══════════════════════════════════════════════════════════ -->
+<div id="view-client" class="view" role="main" aria-label="Light node display">
+  <div id="client-bg"></div>
+  <div id="client-ripple-container" aria-hidden="true"></div>
+  <div class="client-hud">
+    <div class="client-hud-left">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+      <span id="client-status">Connecting…</span>
+    </div>
+    <span id="client-address" class="client-node-id"></span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     HOST DESK VIEW
+══════════════════════════════════════════════════════════ -->
+<div id="view-host" class="view" role="main" aria-label="Party light controller desk">
+  <div class="desk-wrap">
+
+    <!-- ── TOP BAR ── -->
+    <div class="topbar">
+      <div class="topbar-brand">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00f0a0" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <span>LUMINA</span>
+      </div>
+
+      <nav class="tab-nav" role="tablist">
+        <button class="tn-btn active" data-tab="console" role="tab" aria-selected="true" aria-controls="tab-console">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9l2 2-2 2M13 15h2"/></svg>
+          Console
+        </button>
+        <button class="tn-btn" data-tab="audio" role="tab" aria-selected="false" aria-controls="tab-audio">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          Audio
+        </button>
+        <button class="tn-btn" data-tab="modes" role="tab" aria-selected="false" aria-controls="tab-modes">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Shows
+        </button>
+        <button class="tn-btn" data-tab="flash" role="tab" aria-selected="false" aria-controls="tab-flash">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Flash
+        </button>
+      </nav>
+
+      <div class="topbar-status">
+        <div class="status-chip" id="chip-room">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span id="room-code">—</span>
+        </div>
+        <div class="status-chip" id="chip-nodes">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+          <span id="conn-count">0</span>
+        </div>
+        <div class="status-chip accent" id="chip-bpm">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <span id="bpm-display">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         TAB: CONSOLE
+    ═══════════════════════════════════ -->
+    <div id="tab-console" class="tab-panel active" role="tabpanel">
+
+      <!-- Color Engine -->
+      <section class="panel">
+        <div class="panel-head">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="19" cy="13" r="2.5"/><circle cx="6" cy="13" r="2.5"/><circle cx="10" cy="19.5" r="2.5"/><circle cx="17" cy="19.5" r="2.5"/></svg>
+          <span>Color Engine</span>
+        </div>
+
+        <div class="color-grid">
+          <!-- HSL Wheel -->
+          <div class="wheel-col">
+            <canvas id="hsl-wheel" width="150" height="150" aria-label="HSL color wheel — click to pick color"></canvas>
+            <div class="color-preview-strip" id="color-preview" title="Current output color"></div>
+          </div>
+
+          <!-- RGBW Faders -->
+          <div class="faders-col">
+            <div class="fader-row">
+              <span class="fader-label ch-r">R</span>
+              <input type="range" id="val-r" min="0" max="255" value="0" class="fader fader-r" aria-label="Red channel">
+              <output class="fader-out" id="r-out">0</output>
+            </div>
+            <div class="fader-row">
+              <span class="fader-label ch-g">G</span>
+              <input type="range" id="val-g" min="0" max="255" value="200" class="fader fader-g" aria-label="Green channel">
+              <output class="fader-out" id="g-out">200</output>
+            </div>
+            <div class="fader-row">
+              <span class="fader-label ch-b">B</span>
+              <input type="range" id="val-b" min="0" max="255" value="80" class="fader fader-b" aria-label="Blue channel">
+              <output class="fader-out" id="b-out">80</output>
+            </div>
+            <div class="fader-row">
+              <span class="fader-label ch-w">W</span>
+              <input type="range" id="val-w" min="0" max="255" value="0" class="fader fader-w" aria-label="White channel">
+              <output class="fader-out" id="w-out">0</output>
+            </div>
+            <div class="fader-row master-row">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              <input type="range" id="val-master" min="0" max="1" step="0.01" value="1" class="fader fader-m" aria-label="Master brightness">
+              <output class="fader-out" id="m-out">100%</output>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Palette -->
+        <div class="palette-section">
+          <span class="palette-label">Quick Colors</span>
+          <div class="palette-row" id="palette-swatches" role="group" aria-label="Quick color swatches"></div>
+        </div>
+      </section>
+
+      <!-- Effect Layer -->
+      <section class="panel">
+        <div class="panel-head">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span>Effect Layer</span>
+        </div>
+
+        <div class="fx-grid" id="fx-grid" role="group" aria-label="Lighting effects">
+          <button class="fx-btn active" data-effect="none" aria-pressed="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
+            Solid
+          </button>
+          <button class="fx-btn" data-effect="chase" aria-pressed="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Chase
+          </button>
+          <button class="fx-btn" data-effect="split" aria-pressed="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+            Split
+          </button>
+          <button class="fx-btn" data-effect="rainbow" aria-pressed="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 17a10 10 0 0 0-20 0"/><path d="M6 17a6 6 0 0 1 12 0"/><path d="M10 17a2 2 0 0 1 4 0"/></svg>
+            Rainbow
+          </button>
+          <button class="fx-btn" data-effect="pulse" aria-pressed="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Pulse
+          </button>
+          <button class="fx-btn" data-effect="cascade" aria-pressed="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h15M3 18h12"/></svg>
+            Cascade
+          </button>
+          <button class="fx-btn" data-effect="meteor" aria-pressed="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.64 3.64a3.86 3.86 0 0 0-5.46 0L3 17l4 4L21.64 9.1a3.86 3.86 0 0 0 0-5.46z"/></svg>
+            Meteor
+          </button>
+          <button class="fx-btn" data-effect="fire" aria-pressed="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+            Fire
+          </button>
+          <button class="fx-btn" data-effect="ocean" aria-pressed="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-4 6-4 6 4 6 4 3-4 6-4"/><path d="M2 18s3-4 6-4 6 4 6 4 3-4 6-4"/></svg>
+            Ocean
+          </button>
+          <button class="fx-btn" data-effect="police" aria-pressed="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+            Police
+          </button>
+          <button class="fx-btn" data-effect="thunder" aria-pressed="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9"/><polyline points="13 11 9 17 15 17 11 23"/></svg>
+            Thunder
+          </button>
+          <button class="fx-btn" data-effect="psychedelic" aria-pressed="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8a4 4 0 0 1 0 8 4 4 0 0 1 0-8"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+            Psyche
+          </button>
+          <button class="fx-btn" data-effect="rave" aria-pressed="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Rave
+          </button>
+          <button class="fx-btn" data-effect="cinema" aria-pressed="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg>
+            Cinema
+          </button>
+        </div>
+
+        <div class="controls-row">
+          <div class="ctrl-group">
+            <label class="ctrl-label" for="fx-speed">Speed</label>
+            <input type="range" id="fx-speed" min="1" max="100" value="50" class="ctrl-slider" aria-label="Effect speed">
+            <output class="ctrl-out" id="fx-speed-out">50</output>
+          </div>
+          <div class="ctrl-group">
+            <label class="ctrl-label" for="fx-intensity">Intensity</label>
+            <input type="range" id="fx-intensity" min="0" max="100" value="80" class="ctrl-slider" aria-label="Effect intensity">
+            <output class="ctrl-out" id="fx-intensity-out">80%</output>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /tab-console -->
+
+    <!-- ══════════════════════════════════
+         TAB: AUDIO
+    ═══════════════════════════════════ -->
+    <div id="tab-audio" class="tab-panel" role="tabpanel">
+
+      <section class="panel">
+        <div class="panel-head">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          <span>Audio Intelligence Engine</span>
+        </div>
+
+        <button class="mic-btn" id="btn-mic" onclick="toggleAudio()" aria-pressed="false">
+          <svg class="mic-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+            <line x1="12" y1="19" x2="12" y2="23"/>
+            <line x1="8" y1="23" x2="16" y2="23"/>
+          </svg>
+          <div class="mic-btn-text">
+            <strong id="mic-status-text">Enable Microphone Sync</strong>
+            <small>Grants mic access — no data is stored</small>
+          </div>
+          <div class="mic-indicator" id="mic-indicator"></div>
+        </button>
+
+        <div class="sens-controls">
+          <div class="ctrl-group">
+            <label class="ctrl-label" for="bass-sens">Bass Sensitivity</label>
+            <input type="range" id="bass-sens" min="1" max="100" value="60" class="ctrl-slider">
+            <output class="ctrl-out" id="bass-sens-out">60%</output>
+          </div>
+          <div class="ctrl-group">
+            <label class="ctrl-label" for="flash-thresh">Flash Threshold</label>
+            <input type="range" id="flash-thresh" min="10" max="100" value="75" class="ctrl-slider">
+            <output class="ctrl-out" id="flash-thresh-out">75%</output>
+          </div>
+        </div>
+      </section>
+
+      <!-- RTA Spectrum -->
+      <section class="panel">
+        <div class="panel-head">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          <span>31-Band Frequency Spectrum</span>
+        </div>
+        <canvas id="rta-canvas" width="560" height="110" aria-label="Real-time frequency spectrum"></canvas>
+        <div class="rta-labels">
+          <span>20 Hz</span><span>100 Hz</span><span>500 Hz</span><span>1 kHz</span><span>5 kHz</span><span>20 kHz</span>
+        </div>
+      </section>
+
+      <!-- Live Metrics -->
+      <section class="panel">
+        <div class="panel-head">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <span>Live Analysis</span>
+        </div>
+
+        <div class="meter-row">
+          <div class="meter-col">
+            <div class="meter-wrap"><div class="meter-fill bass-fill" id="m-bass"></div></div>
+            <span class="meter-lbl">SUB BASS</span>
+          </div>
+          <div class="meter-col">
+            <div class="meter-wrap"><div class="meter-fill mid-fill" id="m-mid"></div></div>
+            <span class="meter-lbl">MID</span>
+          </div>
+          <div class="meter-col">
+            <div class="meter-wrap"><div class="meter-fill high-fill" id="m-high"></div></div>
+            <span class="meter-lbl">HIGH</span>
+          </div>
+          <div class="meter-col">
+            <div class="meter-wrap"><div class="meter-fill loud-fill" id="m-lufs"></div></div>
+            <span class="meter-lbl">LOUDNESS</span>
+          </div>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat-cell"><span id="s-bpm" class="stat-val">—</span><span class="stat-lbl">BPM</span></div>
+          <div class="stat-cell"><span id="s-key" class="stat-val">—</span><span class="stat-lbl">KEY</span></div>
+          <div class="stat-cell"><span id="s-pitch" class="stat-val">—</span><span class="stat-lbl">NOTE</span></div>
+          <div class="stat-cell"><span id="s-lufs" class="stat-val">—</span><span class="stat-lbl">LUFS</span></div>
+          <div class="stat-cell"><span id="s-signal" class="stat-val">—</span><span class="stat-lbl">SIGNAL</span></div>
+          <div class="stat-cell"><span id="s-energy" class="stat-val">—</span><span class="stat-lbl">ENERGY</span></div>
+        </div>
+      </section>
+
+      <!-- Audio Reactive Modes -->
+      <section class="panel">
+        <div class="panel-head">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8a4 4 0 0 1 0 8"/></svg>
+          <span>Reactive Mapping Mode</span>
+        </div>
+        <div class="audio-mode-grid" id="audio-mode-grid" role="group" aria-label="Audio reactive mode">
+          <button class="am-btn active" data-amode="spectrum" aria-pressed="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            Spectrum Map
+          </button>
+          <button class="am-btn" data-amode="bass-color" aria-pressed="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="19" cy="13" r="2.5"/><circle cx="6" cy="13" r="2.5"/></svg>
+            Bass Color
+          </button>
+          <button class="am-btn" data-amode="beat-flash" aria-pressed="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Beat Flash
+          </button>
+          <button class="am-btn" data-amode="psychedelic" aria-pressed="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8a4 4 0 0 1 0 8 4 4 0 0 1 0-8"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+            Psychedelic
+          </button>
+          <button class="am-btn" data-amode="energy-pulse" aria-pressed="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Energy Pulse
+          </button>
+          <button class="am-btn" data-amode="hue-rotate" aria-pressed="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 17a10 10 0 0 0-20 0"/><path d="M6 17a6 6 0 0 1 12 0"/></svg>
+            Hue Rotate
+          </button>
+        </div>
+
+        <div class="beat-toggles">
+          <label class="toggle-row" for="bass-flash-toggle">
+            <span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Bass hit = white burst
+            </span>
+            <input type="checkbox" id="bass-flash-toggle" checked role="switch" aria-checked="true">
+          </label>
+          <label class="toggle-row" for="excitement-toggle">
+            <span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              Excitement escalation
+            </span>
+            <input type="checkbox" id="excitement-toggle" role="switch" aria-checked="false">
+          </label>
+        </div>
+
+        <div class="ctrl-group" style="margin-top:10px">
+          <label class="ctrl-label" for="flash-decay">Beat Flash Decay</label>
+          <input type="range" id="flash-decay" min="10" max="500" value="80" class="ctrl-slider">
+          <output class="ctrl-out" id="flash-decay-out">80ms</output>
+        </div>
+      </section>
+
+    </div><!-- /tab-audio -->
+
+    <!-- ══════════════════════════════════
+         TAB: SHOWS / MODES
+    ═══════════════════════════════════ -->
+    <div id="tab-modes" class="tab-panel" role="tabpanel">
+
+      <section class="panel">
+        <div class="panel-head">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg>
+          <span>Show Programs</span>
+        </div>
+        <div class="show-grid">
+          <button class="show-card" onclick="launchProgram('club')">
+            <svg class="show-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 17a10 10 0 0 0-20 0"/><path d="M6 17a6 6 0 0 1 12 0"/><path d="M10 17a2 2 0 0 1 4 0"/></svg>
+            <strong>Club Night</strong>
+            <small>Beat-sync flash + rainbow chase</small>
+          </button>
+          <button class="show-card" onclick="launchProgram('rave')">
+            <svg class="show-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <strong>Full Rave</strong>
+            <small>Max intensity psychedelic madness</small>
+          </button>
+          <button class="show-card" onclick="launchProgram('chill')">
+            <svg class="show-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-4 6-4 6 4 6 4 3-4 6-4"/><path d="M2 18s3-4 6-4 6 4 6 4 3-4 6-4"/></svg>
+            <strong>Chill Vibes</strong>
+            <small>Slow ocean waves, warm colors</small>
+          </button>
+          <button class="show-card" onclick="launchProgram('fire')">
+            <svg class="show-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+            <strong>Fire Show</strong>
+            <small>Flickering fire with bass bursts</small>
+          </button>
+          <button class="show-card" onclick="launchProgram('cinema')">
+            <svg class="show-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg>
+            <strong>Cinema</strong>
+            <small>Warm amber, slow dreamy fades</small>
+          </button>
+          <button class="show-card danger-card" onclick="launchProgram('blackout')">
+            <svg class="show-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+            <strong>Blackout</strong>
+            <small>Kill all lights instantly</small>
+          </button>
+        </div>
+      </section>
+
+      <!-- Connected Devices -->
+      <section class="panel">
+        <div class="panel-head">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+          <span>Connected Light Nodes</span>
+        </div>
+        <div id="device-list" role="list" aria-live="polite">
+          <div class="empty-state">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+            <p>No devices connected yet. Share your room code!</p>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /tab-modes -->
+
+    <!-- ══════════════════════════════════
+         TAB: FLASH
+    ═══════════════════════════════════ -->
+    <div id="tab-flash" class="tab-panel" role="tabpanel">
+
+      <section class="panel danger-panel">
+        <div class="panel-head danger-head">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span>Master Flash Override</span>
+        </div>
+        <button class="flash-mega-btn" id="btn-flash-toggle" onclick="toggleFlash()" aria-pressed="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span id="flash-btn-text">FLASH OFF</span>
+        </button>
+
+        <div class="flash-config">
+          <div class="ctrl-group">
+            <label class="ctrl-label" for="flash-speed">Rate (Hz)</label>
+            <input type="range" id="flash-speed" min="1" max="60" value="12" class="ctrl-slider">
+            <output class="ctrl-out" id="flash-speed-out">12 Hz</output>
+          </div>
+          <div class="ctrl-group">
+            <label class="ctrl-label" for="flash-duty">On Time</label>
+            <input type="range" id="flash-duty" min="5" max="95" value="50" class="ctrl-slider">
+            <output class="ctrl-out" id="flash-duty-out">50%</output>
+          </div>
+          <div class="color-ctrl-row">
+            <span class="ctrl-label">Flash Color</span>
+            <input type="color" id="flash-color" value="#ffffff" class="color-picker" aria-label="Flash color">
+            <button class="quick-btn" onclick="setFlashColor('#ffffff')">White</button>
+            <button class="quick-btn" onclick="setFlashColor('#ff0000')">Red</button>
+            <button class="quick-btn" onclick="setFlashColor('#0055ff')">Blue</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Manual Hold Triggers -->
+      <section class="panel danger-panel">
+        <div class="panel-head danger-head">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          <span>Hold Triggers</span>
+          <small class="panel-head-note">Hold to activate, release to restore</small>
+        </div>
+        <div class="trigger-grid">
+          <button class="trig-btn" onpointerdown="triggerManual('white-out')" onpointerup="triggerManualOff()" onpointerleave="triggerManualOff()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            White Out
+          </button>
+          <button class="trig-btn" onpointerdown="triggerManual('black-out')" onpointerup="triggerManualOff()" onpointerleave="triggerManualOff()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+            Black Out
+          </button>
+          <button class="trig-btn" onpointerdown="triggerManual('red-alert')" onpointerup="triggerManualOff()" onpointerleave="triggerManualOff()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Red Alert
+          </button>
+          <button class="trig-btn" onpointerdown="triggerManual('police')" onpointerup="triggerManualOff()" onpointerleave="triggerManualOff()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85"/></svg>
+            Police
+          </button>
+        </div>
+      </section>
+
+    </div><!-- /tab-flash -->
+
+  </div><!-- /desk-wrap -->
+</div><!-- /view-host -->
+
+<script src="app.js"></script>
 </body>
 </html>
