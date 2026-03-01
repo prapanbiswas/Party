@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Virtual Disco Ball Online — Free Browser Disco Light | LuminaParty</title>
+  <meta name="description" content="Free virtual disco ball online — turn your phone screen into a disco light. Rainbow and psychedelic effects simulate scattered disco ball light. No app, no download needed.">
+  <meta name="keywords" content="virtual disco ball, online disco light, disco light online free, disco ball online, virtual disco ball phone, browser disco ball, phone screen disco ball, disco effect online">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://prapanbiswas.github.io/Party/virtual-disco-ball/">
+  <meta property="og:title" content="Virtual Disco Ball Online — Free Browser Disco Light">
+  <meta property="og:description" content="Turn your phone into a virtual disco ball. Rainbow and psychedelic effects, music-reactive, no app needed.">
+  <meta property="og:url" content="https://prapanbiswas.github.io/Party/virtual-disco-ball/">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><circle cx='16' cy='16' r='8' fill='none' stroke='%2300f0a0' stroke-width='2'/><circle cx='16' cy='16' r='3' fill='%2300f0a0'/></svg>">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"SoftwareApplication",
+    "name":"LuminaParty Virtual Disco Ball",
+    "url":"https://prapanbiswas.github.io/Party/virtual-disco-ball/",
+    "description":"Free virtual disco ball and online disco light. Rainbow and psychedelic color effects for phone screens. No download required — runs in any browser.",
+    "applicationCategory":"EntertainmentApplication",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--accent:#00f0a0;--panel:#0c0c14;--dim:#8888aa;--muted:#44445a;--border:rgba(255,255,255,0.07);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{font-size:14px;}
+    body{background:#000;color:#fff;font-family:'Rajdhani',sans-serif;min-height:100dvh;display:flex;flex-direction:column;align-items:center;overflow-x:hidden;}
+    #disco-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;}
+    .page{position:relative;z-index:1;width:100%;max-width:440px;padding:40px 16px 80px;display:flex;flex-direction:column;gap:20px;align-items:center;}
+    header{text-align:center;}
+    .brand{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:0.12em;text-shadow:0 0 40px rgba(0,240,160,0.5);}
+    .brand span{color:var(--accent);}
+    .sub{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.18em;color:var(--muted);margin-top:6px;}
+    .card{width:100%;background:rgba(12,12,20,0.85);border:1px solid var(--border);border-radius:14px;padding:18px;backdrop-filter:blur(10px);}
+    .card h2{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;margin-bottom:12px;}
+    .speed-row{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
+    .sl{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.06em;color:var(--muted);width:60px;flex-shrink:0;}
+    .sr{flex:1;-webkit-appearance:none;appearance:none;height:4px;border-radius:2px;background:#131320;accent-color:var(--accent);outline:none;}
+    .sr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--accent);cursor:pointer;}
+    .so{font-family:'JetBrains Mono',monospace;font-size:0.55rem;color:var(--dim);width:28px;text-align:right;flex-shrink:0;}
+    .mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:12px;}
+    .mode-btn{padding:10px 8px;border-radius:8px;border:1px solid var(--border);background:rgba(255,255,255,0.04);color:var(--dim);font-family:'JetBrains Mono',monospace;font-size:0.58rem;font-weight:700;cursor:pointer;transition:0.13s;}
+    .mode-btn.active{background:rgba(0,240,160,0.1);border-color:rgba(0,240,160,0.4);color:var(--accent);}
+    .nav-back{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:100px;border:1px solid var(--border);background:rgba(255,255,255,0.04);color:var(--dim);font-family:'JetBrains Mono',monospace;font-size:0.58rem;text-decoration:none;transition:0.15s;align-self:flex-start;}
+    .nav-back:hover{color:var(--accent);border-color:rgba(0,240,160,0.3);}
+    .seo-text{font-size:0.72rem;color:var(--muted);line-height:1.65;}
+    .seo-text h3{font-size:0.82rem;font-weight:700;color:var(--dim);margin:12px 0 5px;}
+    .seo-text a{color:var(--accent);}
+    .go-btn{display:block;width:100%;padding:14px;border-radius:10px;background:var(--accent);color:#000;font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.1em;text-align:center;text-decoration:none;transition:0.15s;}
+    .go-btn:hover{background:#00ffaa;}
+    footer{padding:12px 16px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:0.52rem;color:var(--muted);}
+    footer a{color:inherit;text-decoration:none;}footer a:hover{color:var(--accent);}
+  </style>
+</head>
+<body>
+<canvas id="disco-canvas"></canvas>
+<div class="page">
+  <a href="../" class="nav-back">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to LuminaParty
+  </a>
+
+  <header>
+    <div class="brand">VIRTUAL<span>DISCO</span></div>
+    <p class="sub">FREE ONLINE DISCO BALL — NO APP · NO DOWNLOAD</p>
+  </header>
+
+  <div class="card">
+    <h2>Disco Mode</h2>
+    <div class="mode-grid">
+      <button class="mode-btn active" onclick="setMode('rainbow')">Rainbow</button>
+      <button class="mode-btn" onclick="setMode('psychedelic')">Psychedelic</button>
+      <button class="mode-btn" onclick="setMode('spin')">Color Spin</button>
+      <button class="mode-btn" onclick="setMode('scatter')">Scatter</button>
+    </div>
+    <div class="speed-row"><span class="sl">Speed</span><input type="range" id="d-speed" min="1" max="100" value="40" class="sr" oninput="document.getElementById('sp-o').textContent=this.value"><output class="so" id="sp-o">40</o></div>
+    <div class="speed-row"><span class="sl">Density</span><input type="range" id="d-density" min="5" max="60" value="20" class="sr" oninput="document.getElementById('dn-o').textContent=this.value"><output class="so" id="dn-o">20</o></div>
+  </div>
+
+  <a href="../" class="go-btn">Open Full Party Light Controller</a>
+
+  <div class="card">
+    <div class="seo-text">
+      <h3>Virtual Disco Ball — Browser Based, No Download</h3>
+      <p>This virtual disco ball effect runs entirely in your browser using the HTML5 Canvas API. The Rainbow and Psychedelic modes scatter moving color patches across the screen, simulating the light dispersion pattern of a physical rotating disco ball. For the best <strong>virtual disco ball</strong> experience with multiple phones, use the full <a href="../">party light online controller</a> to sync multiple screens together — each device displays a different color segment, creating a true multi-screen online disco light effect.</p>
+      <h3>Multi-Screen Disco Ball Effect</h3>
+      <p>When five or more phones join the same LuminaParty session using the Rainbow effect, each screen displays a different hue of a continuously rotating spectrum. The result across multiple screens held up around a room closely mimics the scattered color patterns of a physical disco ball — making LuminaParty the most accessible <strong>disco light online free</strong> tool available without any hardware or app installation.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a href="../">LuminaParty — Party Light Online</a> · <a href="../strobe-light/">Strobe Light Online</a> · <a href="../music-sync/">Music Sync Lights</a>
+</footer>
+
+<script>
+const c=document.getElementById('disco-canvas');
+const ctx=c.getContext('2d');
+let mode='rainbow', frame=0;
+function resize(){c.width=innerWidth;c.height=innerHeight;}
+resize(); window.addEventListener('resize',resize);
+function setMode(m){
+  mode=m;
+  document.querySelectorAll('.mode-btn').forEach(b=>b.classList.toggle('active',b.onclick.toString().includes(m)));
+}
+(function loop(){
+  frame++;
+  const spd=parseInt(document.getElementById('d-speed').value)/20;
+  const dn=parseInt(document.getElementById('d-density').value);
+  ctx.fillStyle='rgba(0,0,0,0.12)';
+  ctx.fillRect(0,0,c.width,c.height);
+  for(let i=0;i<dn;i++){
+    const x=((Math.sin(frame*spd*0.008+i*2.4)*0.5+0.5)*c.width);
+    const y=((Math.cos(frame*spd*0.006+i*1.7)*0.5+0.5)*c.height);
+    const h=mode==='rainbow'?(frame*spd*1.2+i*(360/dn))%360:
+             mode==='psychedelic'?(frame*spd*2+i*(360/dn)+Math.random()*30)%360:
+             mode==='spin'?(frame*spd*3+i*20)%360:
+             Math.random()*360;
+    const size=mode==='scatter'?Math.random()*40+10:30+Math.sin(frame*0.05+i)*15;
+    const g=ctx.createRadialGradient(x,y,0,x,y,size);
+    g.addColorStop(0,`hsla(${h},100%,65%,0.85)`);
+    g.addColorStop(1,`hsla(${h},100%,45%,0)`);
+    ctx.beginPath(); ctx.arc(x,y,size,0,Math.PI*2);
+    ctx.fillStyle=g; ctx.fill();
+  }
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
