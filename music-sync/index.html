@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Party Lights Sync to Music Online — Sound Activated Disco Lights | LuminaParty</title>
+  <meta name="description" content="Party lights that sync to music online — free, no app. Sound activated disco lights in your browser. Beat detection, BPM tracking, 31-band audio analysis. Turn your phone into a music reactive light.">
+  <meta name="keywords" content="party lights sync to music, music reactive light online, sound activated disco lights online, beat sync light browser, bpm light sync online, music sync lights free, audio reactive party lights, microphone party lights browser">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://prapanbiswas.github.io/Party/music-sync/">
+  <meta property="og:title" content="Party Lights Sync to Music Online — Sound Activated Disco Lights">
+  <meta property="og:description" content="Free sound activated disco lights in your browser. Beat detection, BPM tracking, music reactive colors. No app needed.">
+  <meta property="og:url" content="https://prapanbiswas.github.io/Party/music-sync/">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><circle cx='16' cy='16' r='8' fill='none' stroke='%2300f0a0' stroke-width='2'/><circle cx='16' cy='16' r='3' fill='%2300f0a0'/></svg>">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"SoftwareApplication",
+    "name":"LuminaParty — Party Lights Sync to Music",
+    "url":"https://prapanbiswas.github.io/Party/music-sync/",
+    "description":"Free sound activated disco lights and music reactive party lights. Uses browser microphone for real-time beat detection and BPM tracking. No download required.",
+    "applicationCategory":"EntertainmentApplication",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--accent:#00f0a0;--panel:#0c0c14;--dim:#8888aa;--muted:#44445a;--border:rgba(255,255,255,0.07);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{font-size:14px;}
+    body{background:#000;color:#fff;font-family:'Rajdhani',sans-serif;min-height:100dvh;display:flex;flex-direction:column;align-items:center;}
+    #vis-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;opacity:0.5;}
+    .page{position:relative;z-index:1;width:100%;max-width:440px;padding:40px 16px 80px;display:flex;flex-direction:column;gap:20px;align-items:center;}
+    header{text-align:center;}
+    .brand{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:0.12em;text-shadow:0 0 40px rgba(0,240,160,0.5);}
+    .brand span{color:var(--accent);}
+    .sub{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.18em;color:var(--muted);margin-top:6px;}
+    .card{width:100%;background:rgba(12,12,20,0.88);border:1px solid var(--border);border-radius:14px;padding:18px;backdrop-filter:blur(10px);}
+    .card-h{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;margin-bottom:12px;}
+    .feat-list{display:flex;flex-direction:column;gap:9px;}
+    .feat-item{display:flex;align-items:flex-start;gap:10px;padding:10px;background:rgba(0,240,160,0.05);border:1px solid rgba(0,240,160,0.15);border-radius:8px;}
+    .feat-icon{color:var(--accent);flex-shrink:0;margin-top:1px;}
+    .feat-item strong{display:block;font-size:0.82rem;font-weight:700;}
+    .feat-item small{display:block;font-family:'JetBrains Mono',monospace;font-size:0.55rem;color:var(--muted);margin-top:2px;}
+    .nav-back{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:100px;border:1px solid var(--border);background:rgba(255,255,255,0.04);color:var(--dim);font-family:'JetBrains Mono',monospace;font-size:0.58rem;text-decoration:none;transition:0.15s;align-self:flex-start;}
+    .nav-back:hover{color:var(--accent);border-color:rgba(0,240,160,0.3);}
+    .seo-text{font-size:0.72rem;color:var(--muted);line-height:1.65;}
+    .seo-text h3{font-size:0.82rem;font-weight:700;color:var(--dim);margin:12px 0 5px;}
+    .seo-text a{color:var(--accent);}
+    .go-btn{display:block;width:100%;padding:16px;border-radius:10px;background:var(--accent);color:#000;font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.1em;text-align:center;text-decoration:none;transition:0.15s;}
+    .go-btn:hover{background:#00ffaa;}
+    footer{padding:12px 16px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:0.52rem;color:var(--muted);}
+    footer a{color:inherit;text-decoration:none;}footer a:hover{color:var(--accent);}
+  </style>
+</head>
+<body>
+<canvas id="vis-canvas"></canvas>
+<div class="page">
+  <a href="../" class="nav-back">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to LuminaParty
+  </a>
+
+  <header>
+    <div class="brand">MUSIC<span>SYNC</span></div>
+    <p class="sub">PARTY LIGHTS SYNC TO MUSIC — SOUND ACTIVATED · NO APP</p>
+  </header>
+
+  <div class="card">
+    <div class="card-h">How Music Sync Works</div>
+    <div class="feat-list">
+      <div class="feat-item">
+        <svg class="feat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+        <div><strong>Microphone Capture</strong><small>Listens via browser mic — no data leaves your device</small></div>
+      </div>
+      <div class="feat-item">
+        <svg class="feat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <div><strong>31-Band Spectrum Analysis</strong><small>ISO third-octave EQ — bass, mid, high separated</small></div>
+      </div>
+      <div class="feat-item">
+        <svg class="feat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <div><strong>Beat Detection + BPM</strong><small>Onset detection tracks every beat in real time</small></div>
+      </div>
+      <div class="feat-item">
+        <svg class="feat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="19" cy="13" r="2.5"/><circle cx="6" cy="13" r="2.5"/></svg>
+        <div><strong>Musical Key Detection</strong><small>Krumhansl-Schmuckler key finding algorithm</small></div>
+      </div>
+      <div class="feat-item">
+        <svg class="feat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <div><strong>6 Reactive Modes</strong><small>Spectrum, Bass Color, Beat Flash, Psychedelic, Energy Pulse, Hue Rotate</small></div>
+      </div>
+    </div>
+  </div>
+
+  <a href="../" class="go-btn">Open Music Sync Party Lights</a>
+
+  <div class="card">
+    <div class="seo-text">
+      <h3>Sound Activated Disco Lights — How It Works</h3>
+      <p>LuminaParty's music sync system uses the Web Audio API to capture microphone input, then runs a professional 19-module DSP audio engine. Unlike simple volume-meter lights, this system performs genuine <strong>sound activated disco lights</strong> analysis — independently measuring bass frequencies (20–250 Hz), mid-range (250–4 kHz), and high frequencies (4–20 kHz) using a 31-band ISO third-octave spectrum analyzer.</p>
+      <h3>Beat Sync Light Browser — Real BPM Tracking</h3>
+      <p>The <strong>beat sync light browser</strong> system uses onset detection to identify every beat in the music. Detected beats trigger a white flash burst across all connected devices simultaneously. The BPM value is tracked in real time and displayed in the top bar. Hue Rotate mode uses this BPM to spin the color wheel at exactly the tempo of the song — creating a <strong>bpm light sync online</strong> effect perfectly locked to the music.</p>
+      <h3>Party Lights Sync to Music — No App Needed</h3>
+      <p>All <strong>party lights sync to music</strong> features work entirely in your browser — Chrome, Firefox, Safari, or Edge. No download, no account, no subscription. Open the <a href="../">LuminaParty party light online controller</a>, go to the Audio tab, and tap Enable Microphone Sync to start your <strong>music reactive light online</strong> show immediately.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a href="../">LuminaParty — Party Light Online</a> · <a href="../strobe-light/">Strobe Light Online</a> · <a href="../virtual-disco-ball/">Virtual Disco Ball</a>
+</footer>
+
+<script>
+const c=document.getElementById('vis-canvas');
+const ctx=c.getContext('2d');
+let f=0;
+function resize(){c.width=innerWidth;c.height=innerHeight;}
+resize(); window.addEventListener('resize',resize);
+(function loop(){
+  f++;
+  ctx.fillStyle='rgba(0,0,0,0.08)'; ctx.fillRect(0,0,c.width,c.height);
+  const bars=32, bw=c.width/bars;
+  for(let i=0;i<bars;i++){
+    const h=(Math.sin(f*0.04+i*0.5)*0.5+0.5)*(Math.sin(f*0.02+i*0.3)*0.3+0.7)*c.height*0.6;
+    const hue=160+(i/bars)*200;
+    const g=ctx.createLinearGradient(0,c.height-h,0,c.height);
+    g.addColorStop(0,`hsla(${hue},100%,65%,0.7)`);
+    g.addColorStop(1,`hsla(${hue},100%,35%,0.2)`);
+    ctx.fillStyle=g;
+    ctx.fillRect(i*bw+1,c.height-h,bw-2,h);
+  }
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
