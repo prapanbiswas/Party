@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Strobe Light Online Free — Adjustable Rate &amp; Color | LuminaParty</title>
+  <meta name="description" content="Free online strobe light tool — no app, no download. Adjust flash rate from 1 to 60 Hz, pick any color, control duty cycle. Works on any phone or browser instantly.">
+  <meta name="keywords" content="strobe light online, free online strobe tool, no app strobe light, strobe light online free, online strobe effect, browser strobe light, flash light online, party strobe free">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://prapanbiswas.github.io/Party/strobe-light/">
+  <meta property="og:title" content="Strobe Light Online Free — LuminaParty">
+  <meta property="og:description" content="Free browser strobe light. 1–60 Hz, any color, adjustable duty cycle. No app needed.">
+  <meta property="og:url" content="https://prapanbiswas.github.io/Party/strobe-light/">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><circle cx='16' cy='16' r='8' fill='none' stroke='%2300f0a0' stroke-width='2'/><circle cx='16' cy='16' r='3' fill='%2300f0a0'/></svg>">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"SoftwareApplication",
+    "name":"LuminaParty Online Strobe Light",
+    "url":"https://prapanbiswas.github.io/Party/strobe-light/",
+    "description":"Free online strobe light tool. Adjustable rate 1–60 Hz, color picker, duty cycle control. No download or install required. Works in any browser.",
+    "applicationCategory":"EntertainmentApplication",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --accent:#00f0a0; --danger:#ff2244; --panel:#0c0c14; --dim:#8888aa; --muted:#44445a; --border:rgba(255,255,255,0.07); --r:10px; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{font-size:14px;}
+    body{background:#000;color:#fff;font-family:'Rajdhani',sans-serif;min-height:100dvh;display:flex;flex-direction:column;align-items:center;-webkit-font-smoothing:antialiased;}
+    #strobe-bg{position:fixed;inset:0;background:#000;z-index:0;transition:background 0.01s;}
+    .page{position:relative;z-index:1;width:100%;max-width:440px;padding:40px 16px 80px;display:flex;flex-direction:column;gap:20px;align-items:center;}
+    header{text-align:center;}
+    .brand{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:0.12em;text-shadow:0 0 40px rgba(0,240,160,0.5);}
+    .brand span{color:var(--accent);}
+    .sub{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.18em;color:var(--muted);margin-top:6px;}
+    .card{width:100%;background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px;}
+    .card h2{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;margin-bottom:14px;}
+    .flash-big{width:100%;height:80px;border-radius:var(--r);border:2px solid rgba(255,34,68,0.3);background:rgba(255,34,68,0.1);color:rgba(255,34,68,0.45);font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:0.1em;display:flex;align-items:center;justify-content:center;gap:12px;cursor:pointer;transition:all 0.15s;margin-bottom:14px;}
+    .flash-big.on{background:var(--danger);border-color:#ff6688;color:#fff;box-shadow:0 0 30px rgba(255,34,68,0.5);animation:fg 0.4s ease-in-out infinite alternate;}
+    @keyframes fg{from{box-shadow:0 0 30px rgba(255,34,68,0.4)}to{box-shadow:0 0 60px rgba(255,34,68,0.8)}}
+    .ctrl{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
+    .cl{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.06em;color:var(--muted);width:72px;flex-shrink:0;}
+    .cs{flex:1;-webkit-appearance:none;appearance:none;height:4px;border-radius:2px;background:#131320;accent-color:var(--accent);outline:none;}
+    .cs::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--accent);cursor:pointer;}
+    .co{font-family:'JetBrains Mono',monospace;font-size:0.55rem;color:var(--dim);width:34px;text-align:right;flex-shrink:0;}
+    .color-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+    .cpick{width:42px;height:28px;border:none;border-radius:6px;cursor:pointer;padding:2px;background:#131320;}
+    .qbtn{padding:5px 10px;border-radius:6px;border:1px solid var(--border);background:#131320;color:var(--dim);font-family:'JetBrains Mono',monospace;font-size:0.56rem;cursor:pointer;transition:0.12s;}
+    .qbtn:hover{border-color:var(--accent);color:var(--accent);}
+    .nav-back{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:100px;border:1px solid var(--border);background:rgba(255,255,255,0.04);color:var(--dim);font-family:'JetBrains Mono',monospace;font-size:0.58rem;text-decoration:none;transition:0.15s;align-self:flex-start;}
+    .nav-back:hover{color:var(--accent);border-color:rgba(0,240,160,0.3);}
+    .seo-text{font-size:0.72rem;color:var(--muted);line-height:1.65;}
+    .seo-text h3{font-size:0.82rem;font-weight:700;color:var(--dim);margin:12px 0 5px;}
+    .go-btn{display:block;width:100%;padding:14px;border-radius:var(--r);background:var(--accent);color:#000;font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.1em;text-align:center;text-decoration:none;transition:0.15s;cursor:pointer;border:none;}
+    .go-btn:hover{background:#00ffaa;}
+    footer{margin-top:auto;padding:12px 16px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:0.52rem;color:var(--muted);}
+    footer a{color:inherit;text-decoration:none;}footer a:hover{color:var(--accent);}
+  </style>
+</head>
+<body>
+<div id="strobe-bg"></div>
+<div class="page">
+  <a href="../" class="nav-back">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to LuminaParty
+  </a>
+
+  <header>
+    <div class="brand">LUMINA<span>FLASH</span></div>
+    <p class="sub">FREE STROBE LIGHT ONLINE — NO APP · NO DOWNLOAD</p>
+  </header>
+
+  <div class="card">
+    <h2>Online Strobe Light</h2>
+    <button class="flash-big" id="btn-flash" onclick="toggleStrobe()">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      <span id="flash-txt">TAP TO START</span>
+    </button>
+    <div class="ctrl"><span class="cl">Rate</span><input type="range" id="s-rate" min="1" max="60" value="10" class="cs" oninput="document.getElementById('r-o').textContent=this.value+' Hz'"><output class="co" id="r-o">10 Hz</o></div>
+    <div class="ctrl"><span class="cl">On Time</span><input type="range" id="s-duty" min="5" max="95" value="50" class="cs" oninput="document.getElementById('d-o').textContent=this.value+'%'"><output class="co" id="d-o">50%</o></div>
+    <div class="color-row">
+      <span class="cl">Color</span>
+      <input type="color" id="s-color" value="#ffffff" class="cpick">
+      <button class="qbtn" onclick="document.getElementById('s-color').value='#ffffff'">White</button>
+      <button class="qbtn" onclick="document.getElementById('s-color').value='#ff0000'">Red</button>
+      <button class="qbtn" onclick="document.getElementById('s-color').value='#0044ff'">Blue</button>
+      <button class="qbtn" onclick="document.getElementById('s-color').value='#00ff88'">Green</button>
+    </div>
+  </div>
+
+  <a href="../" class="go-btn">Open Full Party Light Controller</a>
+
+  <div class="card">
+    <div class="seo-text">
+      <h3>Free Strobe Light Online — No App Required</h3>
+      <p>This free online strobe light tool runs entirely in your browser. No download, no account, no payment. Set the flash rate from 1 Hz (slow pulse) to 60 Hz (rapid strobe), choose any color from the full RGB spectrum, and control the duty cycle to adjust the on/off ratio of each flash cycle.</p>
+      <h3>Use as a Disco Strobe or Party Flash</h3>
+      <p>This tool doubles as a no-app strobe light for parties, DJ performances, haunted houses, and photography. The White Out mode provides maximum brightness. Red, Blue, or custom colors let you match your party theme. For multi-device sync and full party light control with 14 effects and music reactive modes, use the full <a href="../" style="color:var(--accent)">party light online controller</a>.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a href="../">LuminaParty — Party Light Online</a> · <a href="../virtual-disco-ball/">Virtual Disco Ball</a> · <a href="../music-sync/">Music Sync Lights</a>
+</footer>
+
+<script>
+let on=false, frame=0, raf=null;
+function toggleStrobe(){
+  on=!on;
+  const btn=document.getElementById('btn-flash');
+  const txt=document.getElementById('flash-txt');
+  btn.classList.toggle('on',on);
+  txt.textContent=on?'STROBING — TAP TO STOP':'TAP TO START';
+  if(on) loop(); else { cancelAnimationFrame(raf); document.getElementById('strobe-bg').style.background='#000'; }
+}
+function loop(){
+  frame++;
+  const rate=parseInt(document.getElementById('s-rate').value);
+  const duty=parseInt(document.getElementById('s-duty').value)/100;
+  const color=document.getElementById('s-color').value;
+  const period=Math.max(1,Math.round(60/rate));
+  const isOn=frame%period<Math.round(period*duty);
+  document.getElementById('strobe-bg').style.background=isOn?color:'#000';
+  raf=requestAnimationFrame(loop);
+}
+</script>
+</body>
+</html>
