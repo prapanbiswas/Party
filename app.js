@@ -604,8 +604,7 @@ function renderLoop() {
   }
 
   // Apply volume brightness to ALL colors
-  }
-
+  
   // Update conn colors
   LP.conns.forEach((c, i) => {
     c.color = colors[Math.min(i, colors.length-1)] || '#000';
